@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
+
+// Custom components
+import Header from "./components/Header.js";
+import Title from "./components/Title.js";
+import Button from "./components/Button.js";
 
 class App extends Component {
   componentDidMount() {
@@ -12,13 +17,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header>
+          <Title name="Call for Diversity" />
+          <Button name="Submit Event" />
+        </Header>
       </div>
     );
   }
