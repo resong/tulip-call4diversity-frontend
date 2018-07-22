@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import "./App.css";
 
 // Custom components
-import Header from "./components/Header.js";
-import Title from "./components/Title.js";
+import AppHeader from "./components/AppHeader.js";
+import AppTitle from "./components/AppTitle.js";
 import Button from "./components/Button.js";
 
 class App extends Component {
@@ -16,11 +16,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header>
-          <Title name="Call for Diversity" />
+      <div>
+        <AppHeader>
+          <AppTitle name="Call for Diversity" />
           <Button name="Submit Event" />
-        </Header>
+        </AppHeader>
       </div>
     );
   }

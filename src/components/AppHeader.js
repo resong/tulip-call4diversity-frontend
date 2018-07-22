@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 /**
- * Class for Header Components in the app
+ * Class for App Header Component
  */
-class Header extends Component {
+class AppHeader extends Component {
 
     render() {
         return (
@@ -15,4 +15,4 @@ class Header extends Component {
 
 }
 
-export default Header;
+export default AppHeader;

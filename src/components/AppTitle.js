@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 /**
- * Class for Title Components in the app
+ * Class for App Title Component
  * based on the h2 tag
  */
-class Title extends Component {
+class AppTitle extends Component {
 
     render() {
         return(
@@ -14,4 +14,4 @@ class Title extends Component {
 
 }
 
-export default Title;
+export default AppTitle;
