@@ -6,6 +6,10 @@ import "./App.css";
 import AppHeader from "./components/AppHeader.js";
 import AppTitle from "./components/AppTitle.js";
 import Button from "./components/Button.js";
+import EventsContainer from "./components/EventsContainer.js";
+import PageTitle from "./components/PageTitle.js";
+import Event from "./components/Event.js";
+import Criteria from "./components/Criteria.js";
 
 class App extends Component {
   componentDidMount() {
@@ -21,6 +25,13 @@ class App extends Component {
           <AppTitle name="Call for Diversity" />
           <Button name="Submit Event" />
         </AppHeader>
+        <EventsContainer>
+          <PageTitle name="Upcoming Events" />
+          <Event>
+            <Criteria>
+            </Criteria>
+          </Event>
+        </EventsContainer>
       </div>
     );
   }
