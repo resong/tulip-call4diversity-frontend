@@ -3,21 +3,14 @@ import React, { Component } from "react";
 import "./App.css";
 
 // Custom components
-import AppHeader from "./components/AppHeader.js";
-import AppTitle from "./components/AppTitle.js";
-import Button from "./components/Button.js";
-import EventsContainer from "./components/EventsContainer.js";
-import PageTitle from "./components/PageTitle.js";
-import Event from "./components/Event.js";
-import Criteria from "./components/Criteria.js";
+import AppHeader from "./components/AppHeader";
+import AppTitle from "./components/AppTitle";
+import Button from "./components/Button";
+import PageTitle from "./components/PageTitle";
+
+import EventsContainer from "./containers/EventsContainer";
 
 class App extends Component {
-  componentDidMount() {
-    // this is here as an example for how to connect to the backend
-    // it should be removed once development has started
-    this.props.healthCheck();
-  }
-
   render() {
     return (
       <div>
@@ -25,13 +18,10 @@ class App extends Component {
           <AppTitle name="Call for Diversity" />
           <Button name="Submit Event" />
         </AppHeader>
-        <EventsContainer>
+        <section>
           <PageTitle name="Upcoming Events" />
-          <Event>
-            <Criteria>
-            </Criteria>
-          </Event>
-        </EventsContainer>
+          <EventsContainer />
+        </section>
       </div>
     );
   }
