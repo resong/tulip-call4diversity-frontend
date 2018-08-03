@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React from "react";
+import { Field, reduxForm } from "redux-form";
+import { StyledTextField } from "./TextInput";
 
-class SubmissionForm extends Component {
-  render () {
-    return (
-      <form action="">
-        {/* Input fields here */}
-      </form>
-    );
-  }
-}
+export const SubmissionForm = props => (
+  <form action="">
+    <Field
+      name="firstName"
+      component={StyledTextField}
+      type="text"
+      label="First Name"
+    />
+  </form>
+);
 
-export default SubmissionForm;
+export const ReduxFormMaker = ({ name, formComponent, ...restProps }) => {
+  const MyForm = reduxForm({ form: name })(formComponent);
+  return <MyForm {...restProps} />;
+};

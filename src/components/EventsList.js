@@ -2,6 +2,10 @@ import React from "react";
 
 import Event from "./Event";
 import Criteria from "./Criteria";
+import {
+  ReduxFormMaker,
+  SubmissionForm
+} from "../components/Form/SubmissionForm";
 
 class EventsList extends React.Component {
   componentDidMount() {
@@ -17,6 +21,10 @@ class EventsList extends React.Component {
           : conferences.map(conference => (
               <Event key={conference.id}>
                 <Criteria>{conference.name}</Criteria>
+                <ReduxFormMaker
+                  name={`conference_${conference.name}`}
+                  formComponent={SubmissionForm}
+                />
               </Event>
             ))}
       </div>
