@@ -18,16 +18,15 @@ class EventsList extends React.Component {
         {isLoading
           ? null
           : conferences.map(conference => (
-              <Event key={conference.id}>
-
-                <SubmissionForm /> 
-                <Criteria>{conference.name}</Criteria>
-                <ReduxFormMaker
-                  name={`conference_${conference.name}`}
-                  formComponent={SubmissionForm}
-                />
-              </Event>
-            ))}
+            <Event key={conference.id}>
+              <Criteria>{conference.name}</Criteria>
+            </Event>
+          ))}
+        {/* Form component is here for now, so we can see it in the front end */}
+        <ReduxFormMaker
+          name={`SubmissionForm`}
+          formComponent={SubmissionForm}
+        />
       </div>
     );
   }

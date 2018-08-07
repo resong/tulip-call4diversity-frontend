@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "1.4.2",
+    "@babel/runtime": "7.0.0-beta.55",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
@@ -21,8 +22,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8081",
-  "devDependencies": {
-    "@material-ui/core": "^1.4.1"
-  }
+  "proxy": "http://localhost:8081"
 }
