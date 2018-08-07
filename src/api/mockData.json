@@ -10,7 +10,7 @@
         "submissionDueDate": 1532479620244,
         "submissionWebsiteUrl": "www.google.com",
         "compensation": true,
-        "codeOfConduct": true,
+        "codeOfConduct":false,
         "scholarship": true,
         "eventLogo": "",
         "contactInfo": {
@@ -51,9 +51,9 @@
         "location": "Coolerville, ON, Canada",
         "submissionDueDate": 1532479620244,
         "submissionWebsiteUrl": "www.google.com",
-        "compensation": true,
+        "compensation": false,
         "codeOfConduct": true,
-        "scholarship": true,
+        "scholarship": false,
         "eventLogo": "",
         "contactInfo": {
             "id": 2,

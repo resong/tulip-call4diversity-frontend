@@ -1,17 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
-/**
- * Class for PageTitle Component
- * based on the h2 tag
- */
-class PageTitle extends Component {
+const styles = theme => ({
+});
 
-    render() {
-        return(
-            <h2>{ this.props.name }</h2>
-        );
-    }
-
+const PageTitle = (props) => {
+    return(
+        <Typography variant="headline" gutterBottom>{ props.name }</Typography>
+    );
 }
 
-export default PageTitle;
+export default withStyles(styles)(PageTitle);
