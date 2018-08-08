@@ -26,6 +26,7 @@ const styles = theme => ({
         textDecoration: 'none'
     }
   });
+    
 
 
 const Event = (props) => {
