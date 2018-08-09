@@ -1,4 +1,4 @@
-import conferences from "../api/conferences.js";
+import conferences from "../api/conferences";
 
 /**
  * General file for Redux Action Creators
@@ -7,23 +7,24 @@ import conferences from "../api/conferences.js";
 // Constants
 export const CONFERENCE_ACTIONS = {
   LOADING: "LOADING_CONFERENCES",
-  LOAD_SUCCESS: "LOAD_SUCCESS_CONFERENCES"
+  LOAD_SUCCESS: "LOAD_SUCCESS_CONFERENCES",
+  LOAD_FAILURE: "LOAD_FAILURE_CONFERENCES"
 };
 
 // Action Creators
 export const getAllConferences = dispatch => {
-  dispatch(conferencesIsLoading(true));
-  conferences.getAll().then(res => {
-    dispatch(conferencesIsLoading(false));
-    dispatch(getConferencesSuccess(res));
-  });
+  dispatch(conferencesIsLoading());
+  conferences.getAll()
+    .then(res => {
+      dispatch(getConferencesSuccess(res.data));
+    })
+    .catch(err => {
+      dispatch(getConferencesFailure());
+    });
 };
 
-const conferencesIsLoading = bool => ({
-  type: CONFERENCE_ACTIONS.LOADING,
-  payload: {
-    isLoading: bool
-  }
+const conferencesIsLoading = () => ({
+  type: CONFERENCE_ACTIONS.LOADING
 });
 
 const getConferencesSuccess = conferences => ({
@@ -31,4 +32,8 @@ const getConferencesSuccess = conferences => ({
   payload: {
     conferences
   }
+});
+
+const getConferencesFailure = () => ({
+  type: CONFERENCE_ACTIONS.LOAD_FAILURE
 });

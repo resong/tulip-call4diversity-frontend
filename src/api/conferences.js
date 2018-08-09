@@ -1,14 +1,9 @@
-import conferences from "./mockData.json";
+import { API_BASE_URL } from "./config";
+import axios from "axios";
 
 /**
- * Mocking call to API to get list of conferences
+ * API Calls related to the list of conferences on the home page
  */
-
-// Timeout in ms
-const TIMEOUT = 1000;
-
-//TODO: swap this out for the real API call
 export default {
-  getAll: () =>
-    new Promise((resolve, reject) => setTimeout(resolve, TIMEOUT, conferences))
+  getAll: () => axios.get(`${API_BASE_URL}/conference`)
 };

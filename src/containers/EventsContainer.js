@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import EventsList from "../components/EventsList";
 import { getAllConferences } from "../actions/index";
 
-const mapStateToProps = ({ conferences, isLoading }) => ({
+const mapStateToProps = ({ conferences, loading, errors }) => ({
   conferences,
-  isLoading
+  isLoading: loading,
+  hasErrors: errors
 });
 
 const mapDispatchToProps = dispatch => {
