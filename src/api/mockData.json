@@ -1,0 +1,65 @@
+[
+    {
+        "id": 0,
+        "createOnDate": 1532479620244,
+        "modifiedOnDate": "",
+        "name": "Party Event",
+        "websiteUrl": "www.google.com",
+        "date": 1532479805333,
+        "location": "Toronto, ON, Canada",
+        "submissionDueDate": 1532479620244,
+        "submissionWebsiteUrl": "www.google.com",
+        "compensation": true,
+        "codeOfConduct":false,
+        "scholarship": true,
+        "eventLogo": "",
+        "contactInfo": {
+            "id": 0,
+            "name": "Tyn Soltys",
+            "email": "asdasd@asdasd.com",
+            "organizationLogo": ""
+        }
+    },
+    {
+        "id": 1,
+        "createOnDate": 1532479620244,
+        "modifiedOnDate": "",
+        "name": "Cool Event",
+        "websiteUrl": "www.google.com",
+        "date": 1532479805333,
+        "location": "Cool Town, ON, Canada",
+        "submissionDueDate": 1532479620244,
+        "submissionWebsiteUrl": "www.google.com",
+        "compensation": true,
+        "codeOfConduct": true,
+        "scholarship": true,
+        "eventLogo": "",
+        "contactInfo": {
+            "id": 1,
+            "name": "Rebecca Song",
+            "email": "asdasd@asdasd.com",
+            "organizationLogo": ""
+        }
+    },
+    {
+        "id": 2,
+        "createOnDate": 1532479620244,
+        "modifiedOnDate": "",
+        "name": "Festival of Coolness",
+        "websiteUrl": "www.google.com",
+        "date": 1532479805333,
+        "location": "Coolerville, ON, Canada",
+        "submissionDueDate": 1532479620244,
+        "submissionWebsiteUrl": "www.google.com",
+        "compensation": false,
+        "codeOfConduct": true,
+        "scholarship": false,
+        "eventLogo": "",
+        "contactInfo": {
+            "id": 2,
+            "name": "Anca Appleeater",
+            "email": "asdasd@asdasd.com",
+            "organizationLogo": ""
+        }
+    }
+]
