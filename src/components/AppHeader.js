@@ -39,7 +39,7 @@ class AppHeader extends Component {
                     <Grid item md={8} xs={12} className={classes.gridChild}>
                         <Toolbar variant="dense" className={classes.toolbar}>
                             <Typography variant="title" color="primary">
-                                Call for Diversity
+                                Speak EZ
                             </Typography>
                             <Button variant="contained" color="primary" className={classes.button}>
                                 Submit Event
