@@ -22,7 +22,6 @@ const styles = theme => ({
     },
     gridChild: {
         width: '100%',
-        maxWidth: '900px',
         margin: 'auto'
     },
     appbar: {
@@ -36,8 +35,8 @@ class AppHeader extends Component {
         return (
 
             <AppBar position="static" color="default" className={classes.appbar}>
-                <Grid container className={classes.gridContainer}>
-                    <Grid item md={8} xs={12} justify="center" className={classes.gridChild}>
+                <Grid container justify="center" className={classes.gridContainer}>
+                    <Grid item md={8} xs={12} className={classes.gridChild}>
                         <Toolbar variant="dense" className={classes.toolbar}>
                             <Typography variant="title" color="primary">
                                 Call for Diversity
