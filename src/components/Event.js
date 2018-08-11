@@ -40,7 +40,7 @@ const Event = props => {
     state,
     country,
     eventDate,
-    websiteUrl,
+    submissionUrl,
     submissionDueDate
   } = props.conference;
   // const { name, location, eventDate, websiteUrl } = props.conference;
@@ -50,7 +50,7 @@ const Event = props => {
   return (
     <Paper className={classes.root}>
       <Typography variant="title" color="primary" gutterBottom>
-        <a className={classes.eventLink} target="_blank" href={websiteUrl}>
+        <a className={classes.eventLink} target="_blank" href={submissionUrl}>
           {name}
         </a>
       </Typography>
