@@ -2,10 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
-import {
-  ReduxFormMaker,
-  SubmissionForm
-} from "./SubmissionForm";
+import ReduxFormMaker from "./SubmissionForm";
 
 const styles = theme => ({
   root: {
@@ -22,10 +19,7 @@ const FormContainer = props => {
   const { classes } = props;
   return (
     <Paper className={classes.root}>
-      <ReduxFormMaker
-        name={`SubmissionForm`}
-        formComponent={SubmissionForm}
-      />
+      <ReduxFormMaker />
     </Paper>
   );
 }
