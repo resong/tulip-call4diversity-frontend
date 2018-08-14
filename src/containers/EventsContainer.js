@@ -1,12 +1,15 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import EventsList from "../components/EventsList";
-import { getAllConferences, filterConferences } from "../actions";
+import EventsList from '../components/EventsList';
+import { getAllConferences, filterConferences } from '../actions';
 
 const mapStateToProps = ({ conferences, loading, errors, search }) => ({
   conferences,
-  filteredConferences: conferences.filter(conference =>
-    conference.name.toLowerCase().includes(search.toLowerCase())
+  filteredConferences: conferences.filter(
+    conference =>
+      conference.name // check if the conference object has a name
+        ? conference.name.toLowerCase().includes(search.toLowerCase())
+        : false
   ),
   isLoading: loading,
   hasErrors: errors,
