@@ -1,0 +1,46 @@
+/**** Styling for React Widgets ****/
+.form-datePicker {
+  flex: 0 0 50%;
+  padding-right: 20px;
+}
+
+.form-datePicker > span {
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  padding: 18px 0 6px;
+  transform: translateY(1.5px) scale(0.75);
+  transform-origin: top left;
+}
+
+.form-datePicker .rw-widget-picker {
+  height: 41px;
+}
+
+/**** These can probably be applied via Material UI ****/
+.form-block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.MuiFormControl-root-202 {
+  flex: 0 0 50%;
+}
+
+fieldset.MuiFormControl-root-202 {
+  flex: 0 0 100%;
+}
+
+hr {
+  flex: 0 0 100%;
+}
+
+form > button.MuiButtonBase-root-190 {
+  margin-top: 20px;
+}
+
+form > button.MuiButtonBase-root-190:first-child {
+  margin-right: 20px;
+}

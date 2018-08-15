@@ -41,7 +41,8 @@ const styles = theme => ({
   bootstrapFormLabel: {
     fontSize: 18,
     fontWeight: 700,
-    color: "black"
+    color: "black",
+    margin: 0
   }
 });
 
