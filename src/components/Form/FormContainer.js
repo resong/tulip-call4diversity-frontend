@@ -16,10 +16,10 @@ const styles = theme => ({
 });
 
 const FormContainer = props => {
-  const { classes } = props;
+  const { classes, onSubmit } = props;
   return (
     <Paper className={classes.root}>
-      <ReduxFormMaker />
+      <ReduxFormMaker onSubmit={onSubmit}  />
     </Paper>
   );
 }

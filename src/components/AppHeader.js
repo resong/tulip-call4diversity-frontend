@@ -30,6 +30,8 @@ const styles = theme => ({
 
 class AppHeader extends Component {
 
+
+
     render() {
         const { classes } = this.props;
         return (
@@ -41,9 +43,13 @@ class AppHeader extends Component {
                             <Typography variant="title" color="primary">
                                 Speak EZ
                             </Typography>
-                            <Button variant="contained" color="primary" className={classes.button}>
-                                Submit Event
-                            </Button>
+                            {/* NOTE: The button is currently being toggled based on whether the form is showing or not */}
+                            { !this.props.common.displayForm
+                            ?
+                                <Button variant="contained" color="primary" className={classes.button} onClick={() => {this.props.conferencesHide(); this.props.formShow()}}>
+                                    Submit Event
+                                </Button>
+                            : null }
                         </Toolbar>
                     </Grid>
                 </Grid>   

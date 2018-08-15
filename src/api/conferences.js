@@ -20,9 +20,11 @@ export default {
   getAll: () => axios.get(`${API_BASE_URL}/conference`),
   postSubmissionForm: values => {
     const data = sanitizeValues(values);
+    
     const config = {
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     };
-    axios.post(`${API_BASE_URL}/conference`, qs.stringify(data), config);
+    console.log('from the axios')
+   return axios.post(`${API_BASE_URL}/conference`, qs.stringify(data), config);
   }
 };

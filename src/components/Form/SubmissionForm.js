@@ -1,13 +1,13 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import Button from '@material-ui/core/Button';
+
 import StyledTextField from "./TextInput";
 
 import "react-widgets/dist/css/react-widgets.css";
 import Moment from "moment";
 import momentLocalizer from "react-widgets-moment";
 import Divider from "@material-ui/core/Divider";
-import conferences from "../../api/conferences";
 import WrappedDateTimePicker from './DatePicker';
 import { renderRadioButtonGroup } from "./RadioButton";
 
@@ -21,7 +21,7 @@ const codeOfConduct = "codeOfConduct";
 const scholarship = "scholarship";
 
 export const SubmissionForm = props => (
-  <form action="" onSubmit={props.handleSubmit}>
+  <form action="" onSubmit={props.handleSubmit(props.onSubmit)}>
     <div className="form-block">
       <Field
         name="name"
@@ -105,6 +105,10 @@ export const SubmissionForm = props => (
       disabled={props.pristine || props.submitting}
       variant="contained"
       color="primary"
+      onSubmit={() => {
+        this.props.formHide();
+        this.props.conferencesShow();
+      }}
     >
       Submit Event
     </Button>
@@ -120,8 +124,5 @@ export const SubmissionForm = props => (
   </form>
 );
 
-const onSubmit = values => {
-  conferences.postSubmissionForm(values);
-};
 
-export default reduxForm({ form: "SubmissionForm", onSubmit })(SubmissionForm);
+export default reduxForm({ form: "SubmissionForm" })(SubmissionForm);
