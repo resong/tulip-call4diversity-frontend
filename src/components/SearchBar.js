@@ -1,12 +1,22 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
-import Search from "@material-ui/icons/Search";
-import InputAdornment from "@material-ui/core/InputAdornment";
+import Search from "@material-ui/icons/SearchTwoTone";
 
 const styles = theme => ({
+  searchBarContainer: {
+    position: 'relative',
+  },
+  inputIcon: {
+    position: 'absolute',
+    left: '13px',
+    top: '27px',
+    zIndex: 1000,
+    color: '#757575'
+  },
   bootstrapInput: {
     marginBottom: 10,
+    paddingLeft: '50px',
     borderRadius: 4,
     backgroundColor: theme.palette.common.white,
     border: "1px solid #ced4da",
@@ -36,25 +46,24 @@ const styles = theme => ({
 const SearchBar = props => {
   const { classes, searchText, onChange } = props;
   return (
-    <TextField
-      type="text"
-      placeholder="Search for event by name"
-      value={searchText}
-      onChange={onChange}
-      margin="normal"
-      fullWidth
-      InputProps={{
-        disableUnderline: true,
-        classes: {
-          input: classes.bootstrapInput
-        },
-        startAdornment: (
-          <InputAdornment position="start">
-            <Search />
-          </InputAdornment>
-        )
-      }}
-    />
+    <div className={classes.searchBarContainer}>
+      <Search className={classes.inputIcon}/>
+      <TextField
+        type="text"
+        placeholder="Search for event by name"
+        value={searchText}
+        onChange={onChange}
+        margin="normal"
+        fullWidth
+        InputProps={{
+          disableUnderline: true,
+          classes: {
+            input: classes.bootstrapInput
+          },
+        }}
+      />
+    </div>
+    
   );
 };
 
