@@ -6,6 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 // Custom components
 import PageContent from "./components/PageContent";
 import AppHeader from "./components/AppHeader";
+import AppFooter from "./components/AppFooter";
 import PageTitle from "./components/PageTitle";
 import FormContainer from "./components/Form/FormContainer";
 import EventsContainer from "./containers/EventsContainer";
@@ -67,7 +68,8 @@ class App extends Component {
 
 
         </PageContent>
-
+        
+        <AppFooter />
 
       </div>
     );
