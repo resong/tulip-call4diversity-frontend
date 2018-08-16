@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import moment from "moment";
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import moment from 'moment';
 
-import Criteria from "./Criteria";
+import Criteria from './Criteria';
 
 //TODO - finish proper date formatting
 // const timestampFormatter = (timestamp) => {
@@ -28,7 +28,7 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit * 3
   },
   eventLink: {
-    textDecoration: "none"
+    textDecoration: 'none'
   }
 });
 
@@ -44,16 +44,14 @@ const Event = props => {
     submissionDueDate
   } = props.conference;
 
-  
   const dateToFormat = date => {
-    if(date && date.length > 0 && date !== '') {
-      console.log(moment(date).format("LL"))
-      return moment(date).format("LL")
+    if (date && date.length > 0 && date !== '') {
+      return moment(date).format('LL');
     } else {
-      return 'Check event details for dates'
+      return 'Check event details for dates';
     }
   };
-  
+
   return (
     <Paper className={classes.root}>
       <Typography variant="title" color="primary" gutterBottom>
