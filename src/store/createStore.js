@@ -1,10 +1,15 @@
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import { createLogger } from "redux-logger";
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-import { rootReducer } from "../reducers/rootReducer";
+import { createLogger } from 'redux-logger';
+import { rootReducer } from '../reducers/rootReducer';
 
-const logger = createLogger();
+let middleware = [thunk];
+
+if (process.env.NODE_ENV !== 'production') {
+  const logger = createLogger();
+  middleware = [...middleware, logger];
+}
 
 /**
  * Redux store creation, incorporating redux-thunk
@@ -12,5 +17,5 @@ const logger = createLogger();
 export const store = createStore(
   rootReducer,
   undefined,
-  applyMiddleware(thunk, logger)
+  applyMiddleware(...middleware)
 );
