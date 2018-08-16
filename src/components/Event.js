@@ -37,8 +37,8 @@ const Event = props => {
   const {
     name,
     city,
-    state,
-    country,
+    // state,
+    // country,
     eventDate,
     submissionUrl,
     submissionDueDate
@@ -51,8 +51,22 @@ const Event = props => {
       return 'Check event details for dates';
     }
   };
+  
+  // TODO: for when location is refactored into separate things
+  // const locationToFormat = ({city, state, country}) => {
+  //   if ( city && state && country  ) {
+  //     return `${city}, ${state}, ${country}`
+  //   } else if ( state && country) {
+  //     return `${state}, ${country}`
+  //   } else if ( city && country) {
+  //     return `${city}, ${country}`
+  //   } else {
+  //     return `Check event details for location`
+  //   }
+  // };
 
   return (
+
     <Paper className={classes.root}>
       <Typography variant="title" color="primary" gutterBottom>
         <a className={classes.eventLink} target="_blank" href={submissionUrl}>
@@ -60,7 +74,8 @@ const Event = props => {
         </a>
       </Typography>
       <Typography variant="subheading">
-        {dateToFormat(eventDate)} • {city}, {state}, {country}
+      {/* TODO: Refactor location comma parsing thing */}
+        {dateToFormat(eventDate)} • {city}
       </Typography>
       <Typography color="#040411">
         Submission Due Date: {dateToFormat(submissionDueDate)}
