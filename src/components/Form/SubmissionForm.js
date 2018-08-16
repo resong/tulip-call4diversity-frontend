@@ -9,6 +9,7 @@ import Divider from "@material-ui/core/Divider";
 import WrappedDatePicker from './DatePicker';
 import { renderRadioButtonGroup } from "./RadioButton";
 import './FormStyles.css';
+import validate from './FormValidations';
 
 Moment.locale("en");
 momentLocalizer();
@@ -122,4 +123,4 @@ export const SubmissionForm = props => (
 );
 
 
-export default reduxForm({ form: "SubmissionForm" })(SubmissionForm);
+export default reduxForm({ form: "SubmissionForm", validate })(SubmissionForm);

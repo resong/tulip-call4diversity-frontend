@@ -55,6 +55,7 @@ const StyledTextField = ({
   const { classes } = props;
 
   return (
+  <div>
     <TextField
       type="text"
       margin="normal"
@@ -74,6 +75,10 @@ const StyledTextField = ({
         className: classes.bootstrapFormLabel
       }}
     />
+    <div>
+      {touched && error && <span>{error}</span>}
+    </div>
+  </div>
   );
 };
 
