@@ -7,10 +7,6 @@ import qs from "qs";
  */
 const sanitizeValues = values => ({
   ...values,
-  state: "Ontario",
-  submissionDueDate: "",
-  country: "Canada",
-  eventDate: "",
   compensation: values.compensation === "yes" ? true : false,
   codeOfConduct: values.codeOfConduct === "yes" ? true : false,
   scholarship: values.scholarship === "yes" ? true : false
@@ -24,7 +20,7 @@ export default {
     const config = {
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     };
-    console.log('from the axios')
+    console.log('POST REQUEST', values)
    return axios.post(`${API_BASE_URL}/conference`, qs.stringify(data), config);
   }
 };

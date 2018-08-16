@@ -15,8 +15,8 @@ const validate = values => {
 
     // Date Picker 1
 
-    if (!values.startDate) {
-      errors.startDate = "Required";
+    if (!values.eventDate) {
+      errors.eventDate = "Required";
     }
 
     // Event Location

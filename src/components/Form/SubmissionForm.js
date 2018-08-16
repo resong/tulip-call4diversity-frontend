@@ -34,7 +34,7 @@ export const SubmissionForm = props => (
         label="Event Website"
       />
       <Field 
-        name="startDate" 
+        name="eventDate" 
         label="Event Date" 
         component={WrappedDatePicker} 
       />

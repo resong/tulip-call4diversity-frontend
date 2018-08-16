@@ -43,10 +43,17 @@ const Event = props => {
     submissionUrl,
     submissionDueDate
   } = props.conference;
-  // const { name, location, eventDate, websiteUrl } = props.conference;
-  console.log("event date", eventDate);
-  const dateToFormat = date => moment(date).format("LL");
 
+  
+  const dateToFormat = date => {
+    if(date && date.length > 0 && date !== '') {
+      console.log(moment(date).format("LL"))
+      return moment(date).format("LL")
+    } else {
+      return 'Check event details for dates'
+    }
+  };
+  
   return (
     <Paper className={classes.root}>
       <Typography variant="title" color="primary" gutterBottom>
@@ -55,10 +62,10 @@ const Event = props => {
         </a>
       </Typography>
       <Typography variant="subheading">
-        {dateToFormat({ eventDate })} • {city}, {state}, {country}
+        {dateToFormat(eventDate)} • {city}, {state}, {country}
       </Typography>
       <Typography color="#040411">
-        Submission Due Date: {dateToFormat({ submissionDueDate })}
+        Submission Due Date: {dateToFormat(submissionDueDate)}
       </Typography>
       <Criteria conference={props.conference} />
     </Paper>
