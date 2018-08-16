@@ -57,7 +57,7 @@ const Event = props => {
       <Typography variant="subheading">
         {dateToFormat({ eventDate })} • {city}, {state}, {country}
       </Typography>
-      <Typography color="secondary">
+      <Typography color="#040411">
         Submission Due Date: {dateToFormat({ submissionDueDate })}
       </Typography>
       <Criteria conference={props.conference} />

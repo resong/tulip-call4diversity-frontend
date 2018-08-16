@@ -18,12 +18,12 @@ export const renderRadioButtonGroup = (type, label) => ({ input, ...rest }) => {
         <FormControlLabel 
           value="yes" 
           control={<Radio color="#000" />} 
-          label="yes"
+          label="Yes"
         />
         <FormControlLabel 
           value="no" 
           control={<Radio color="#000" />} 
-          label="no"
+          label="No"
         />
       </RadioGroup>
     </FormControl>

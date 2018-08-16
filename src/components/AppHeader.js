@@ -36,7 +36,7 @@ class AppHeader extends Component {
         const { classes } = this.props;
         return (
 
-            <AppBar position="static" color="default" className={classes.appbar}>
+            <AppBar position="static" color="#fff" className={classes.appbar}>
                 <Grid container justify="center" className={classes.gridContainer}>
                     <Grid item md={8} xs={12} className={classes.gridChild}>
                         <Toolbar variant="dense" className={classes.toolbar}>
