@@ -22,7 +22,6 @@ const styles = theme => ({
     },
     gridChild: {
         width: '100%',
-        maxWidth: '900px',
         margin: 'auto'
     },
     appbar: {
@@ -31,20 +30,26 @@ const styles = theme => ({
 
 class AppHeader extends Component {
 
+
+
     render() {
         const { classes } = this.props;
         return (
 
-            <AppBar position="static" color="default" className={classes.appbar}>
-                <Grid container className={classes.gridContainer}>
-                    <Grid item md={8} xs={12} justify="center" className={classes.gridChild}>
+            <AppBar position="static" color="#fff" className={classes.appbar}>
+                <Grid container justify="center" className={classes.gridContainer}>
+                    <Grid item md={8} xs={12} className={classes.gridChild}>
                         <Toolbar variant="dense" className={classes.toolbar}>
                             <Typography variant="title" color="primary">
-                                Call for Diversity
+                                Speak EZ
                             </Typography>
-                            <Button variant="contained" color="primary" className={classes.button}>
-                                Submit Event
-                            </Button>
+                            {/* NOTE: The button is currently being toggled based on whether the form is showing or not */}
+                            { !this.props.common.displayForm
+                            ?
+                                <Button variant="contained" color="primary" className={classes.button} onClick={() => {this.props.conferencesHide(); this.props.formShow()}}>
+                                    Submit Event
+                                </Button>
+                            : null }
                         </Toolbar>
                     </Grid>
                 </Grid>   

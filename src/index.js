@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import 'typeface-roboto';
-import App from "./App";
+import AppContainer from "./containers/AppContainer";
 import registerServiceWorker from "./registerServiceWorker";
 import { Provider } from "react-redux";
 
@@ -11,7 +11,7 @@ import { healthCheck } from "./api/health";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App healthCheck={healthCheck} />
+    <AppContainer healthCheck={healthCheck} />
   </Provider>,
   document.getElementById("root")
 );

@@ -1,17 +1,28 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import EventsList from "../components/EventsList";
-import { getAllConferences } from "../actions/index";
+import EventsList from '../components/EventsList';
+import { getAllConferences, filterConferences } from '../actions';
 
-const mapStateToProps = ({ conferences, isLoading }) => ({
+const mapStateToProps = ({ conferences, loading, errors, search, common }) => ({
   conferences,
-  isLoading
+  filteredConferences: conferences.filter(
+    conference =>
+      conference.name // check if the conference object has a name
+        ? conference.name.toLowerCase().includes(search.toLowerCase())
+        : false
+  ),
+  isLoading: loading,
+  hasErrors: errors,
+  searchText: search,
+  common
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getData: () => dispatch(getAllConferences)
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  getData: () => dispatch(getAllConferences),
+  filterConferences: name => dispatch(filterConferences(name))
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventsList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EventsList);

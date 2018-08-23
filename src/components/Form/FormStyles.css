@@ -1,0 +1,68 @@
+/**** Styling for React Widgets ****/
+.form-block > div:not([class]) {
+  flex: 0 0 50%;
+}
+
+.form-block > div:not([class]) > span {
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  padding: 18px 0 6px;
+  transform: translateY(1.5px) scale(0.75);
+  transform-origin: top left;
+}
+
+.rw-widget-picker {
+  height: 41px;
+}
+
+.rw-datetime-picker {
+  padding-right: 20px;
+}
+
+/**** These can probably be applied via Material UI ****/
+.form-block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-block > div {
+  flex: 0 0 50%;
+}
+
+.form-block > div div[class*=MuiForm] {
+  width: 100%;
+}
+
+.form-block > fieldset {
+  flex: 0 0 100%;
+}
+
+hr {
+  flex: 0 0 100%;
+}
+
+form > button[class*=MuiButton] {
+  margin-top: 20px;
+}
+
+form > button[type=submit] {
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-block > div:not([class]) {
+    flex: 0 0 100%;
+  }
+  
+  .form-block > div {
+    flex: 0 0 100%;
+  }
+
+  .form-block fieldset {
+    flex: 0 0 100%;
+    margin: 20px 0 10px;
+  }
+}

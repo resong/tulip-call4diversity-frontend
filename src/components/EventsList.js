@@ -1,29 +1,45 @@
-import React from "react";
+import React, { Component } from "react";
 import Event from "./Event";
-import {
-  ReduxFormMaker,
-  SubmissionForm
-} from "../components/Form/SubmissionForm";
+import SearchBar from "./SearchBar";
 
-class EventsList extends React.Component {
+class EventsList extends Component {
   componentDidMount() {
     this.props.getData();
   }
 
+
   render() {
-    const { conferences, isLoading } = this.props;
+    const {
+      conferences,
+      filteredConferences,
+      isLoading,
+      hasErrors,
+      filterConferences,
+      searchText
+    } = this.props;
+
     return (
       <div>
-        {isLoading
-          ? null
-          : conferences.map(conference => (
-            <Event key={conference.id} conference={conference}/>
-            ))}
-        {/* Form component is here for now, so we can see it in the front end */}
-        <ReduxFormMaker
-          name={`SubmissionForm`}
-          formComponent={SubmissionForm}
+        <SearchBar
+          value={searchText}
+          onChange={e => filterConferences(e.target.value)}
         />
+        {isLoading
+          ? "Loading..."
+          : hasErrors
+            ? "Oops! Something went wrong"
+            : conferences.length === 0
+              ? "There are currently no conferences coming up. Stay tuned!"
+              : searchText
+                ? filteredConferences.map(conference => (
+                    <Event key={conference.id} conference={conference} />
+                  ))
+                : conferences.map(conference => (
+                    <Event key={conference.id} conference={conference} />
+                  ))}
+        {/* Form component is here for now, so we can see it in the front end */}
+
+
       </div>
     );
   }
